@@ -162,6 +162,8 @@ const canonical = new URL(path, Astro.site);
     }
 
     {schema && <script type="application/ld+json" set:html={jsonLd(schema)} />}
+    <!-- Adding HTMX -->
+    <script src="https://unpkg.com/htmx.org@1.9.10"></script>
   </head>
   <body>
     <Header /> 
