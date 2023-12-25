@@ -1,0 +1,20 @@
+<div class="calculator">
+  <h4>Mini Calculator</h4>
+  <input type="number" id="num1" placeholder="Number 1">
+  <button hx-post="/calculate" hx-swap="none" hx-trigger="click" hx-target="#num1" hx-vals="{num1:document.querySelector('#num1').value}" hx-headers='{"Content-Type":"application/json"}'>+</button>
+  <input type="number" id="num2" placeholder="Number 2">
+  <button hx-post="/calculate" hx-swap="none" hx-trigger="click" hx-target="#num2" hx-vals="{num2:document.querySelector('#num2').value}" hx-headers='{"Content-Type":"application/json"}'>-</button>
+  <button hx-post="/calculate" hx-swap="none" hx-trigger="click" hx-target="#result" hx-vals="{result:document.querySelector('#num1').value + document.querySelector('#num2').value}" hx-headers='{"Content-Type":"application/json"}'>=</button>
+  <input type="number" id="result" readonly>
+ </div>
+
+ <!-----
+ Each button has several HTMX attributes:
+
+  hx-post="/calculate": This tells HTMX to send a POST request to the /calculate endpoint when the button is clicked.
+  hx-swap="none": This tells HTMX not to update the DOM after the request.
+  hx-trigger="click": This tells HTMX to send the request when the button is clicked.
+  hx-target="#...": This specifies the target element that will receive the server's response.
+  hx-vals="{...}": This sets the values to be sent in the request. In this case, it's the values of the number inputs.
+  hx-headers='{"Content-Type":"application/json"}': This sets the Content-Type header to application/json, indicating that the request body will be in JSON format.
+ --- -->
